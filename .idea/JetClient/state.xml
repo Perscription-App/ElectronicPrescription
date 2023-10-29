@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JetClientState">
+    <option name="draftsState">
+      <draftsState>
+        <option name="requests">
+          <list>
+            <requestState>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;  &quot;username&quot;: &quot;ward&quot;,&#10;  &quot;password&quot;: &quot;pass1&quot;,&#10;  &quot;isDoctor&quot;: 1&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="7dc21b26-18ba-401a-bbb8-0321758753a8" />
+              <option name="method" value="POST" />
+              <option name="name" value="Draft" />
+              <option name="queryParams">
+                <list>
+                  <queryParamState>
+                    <option name="disabled" value="true" />
+                    <option name="key" value="username" />
+                    <option name="value" value="ward" />
+                  </queryParamState>
+                  <queryParamState>
+                    <option name="key" value="password" />
+                    <option name="value" value="pass1" />
+                  </queryParamState>
+                  <queryParamState>
+                    <option name="disabled" value="true" />
+                    <option name="key" value="isDoctor" />
+                    <option name="value" value="1" />
+                  </queryParamState>
+                </list>
+              </option>
+              <option name="url" value="http://localhost:8080/api/v1/register?password=pass1" />
+            </requestState>
+            <requestState>
+              <option name="id" value="938a95d6-78f9-4ad6-9739-4eb2680e5581" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft 1" />
+            </requestState>
+            <requestState>
+              <option name="auth">
+                <authState>
+                  <option name="type" value="NO_AUTH" />
+                </authState>
+              </option>
+              <option name="body">
+                <bodyState>
+                  <option name="raw" value="{&#10;  &quot;username&quot;: &quot;wesam&quot;,&#10;  &quot;password&quot;: &quot;pass1&quot;,&#10;  &quot;isDoctor&quot;: 1&#10;}" />
+                  <option name="type" value="JSON" />
+                </bodyState>
+              </option>
+              <option name="headers">
+                <list>
+                  <headerState>
+                    <option name="key" value="Content-Type" />
+                    <option name="value" value="application/json" />
+                  </headerState>
+                </list>
+              </option>
+              <option name="id" value="3d4b0c16-3619-4dbe-a571-b605a25e7a60" />
+              <option name="method" value="GET" />
+              <option name="name" value="Draft 2" />
+              <option name="url" value="http://localhost:8080/api/v1/register" />
+            </requestState>
+          </list>
+        </option>
+      </draftsState>
+    </option>
+    <option name="id" value="0b471abc-4e5f-42e9-b8c6-1831284d6bdc" />
+  </component>
+</project>

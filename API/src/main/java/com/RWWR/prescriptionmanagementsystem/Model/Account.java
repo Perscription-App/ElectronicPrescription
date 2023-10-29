@@ -22,13 +22,13 @@ public class Account {
     private int id;
 
     private String username;
-    private String passsword;
+    private String password;
     private int isDoctor;
 
     public Account(){}
     public Account(String username, String password, int isDoctor) {
         this.username = username; 
-        this.passsword = password; 
+        this.password = password;
         this.isDoctor = isDoctor;
     }
     //---------------getter and setters-----------------------
@@ -45,10 +45,10 @@ public class Account {
         this.username = username;
     }
     public String getPass() {
-        return passsword;
+        return password;
     }
     public void setPass(String password) {
-        this.passsword = password;
+        this.password = password;
     }
     public int getOccupation() {
         return isDoctor;

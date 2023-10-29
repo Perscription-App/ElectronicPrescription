@@ -22,6 +22,7 @@ public class SecurityConfig {
         // @formatter:off
         http
                 .authorizeHttpRequests((authorize) -> authorize
+                        .requestMatchers("/api/v1/register").permitAll()
                         .anyRequest().authenticated()
                 )
                 .httpBasic(withDefaults())
