@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import  Login  from "./components/Login";
+import { BrowserRouter } from "react-router-dom";
+import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import Patients from "./components/Patients";
 import Medications from "./components/Medications";
@@ -10,7 +10,6 @@ import Notifications from "./components/Notifications";
 // import { api } from "./api";
 
 const Home = () => {
-  <Login/>
   return <h1>Home</h1>;
 };
 
@@ -35,17 +34,15 @@ const App = () => {
   // }
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/patients" element={<Patients />} />
-        <Route path="/medications" element={<Medications />} />
-        <Route path="/prescriptions" element={<Prescriptions />} />
-        <Route path="/notifications" element={<Notifications />} />
-      </Routes>
-    </Router>
+    <BrowserRouter>
+      <Home />
+      <Login />
+      <Dashboard />
+      <Patients />
+      <Medications />
+      <Prescriptions />
+      <Notifications />
+    </BrowserRouter>
   );
 };
 
