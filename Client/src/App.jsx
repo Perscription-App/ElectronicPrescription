@@ -10,6 +10,7 @@ import Notifications from "./components/Notifications";
 // import { api } from "./api";
 
 const Home = () => {
+  <Login/>
   return <h1>Home</h1>;
 };
 
