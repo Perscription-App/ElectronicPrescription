@@ -27,16 +27,14 @@ const Login = () => {
   function handleSignIn() {
     fetch('/login', {
       method: 'POST',
-      headers: {
-
-      },
+      
       body: 'username=${username}&password=${password}',
     })
     .then((response) => {
       if (response.status === 200) {
         alert("success");
       } else {
-        alert("failed");
+        alert(response.status);
       }
     })
     .catch((error) => {
