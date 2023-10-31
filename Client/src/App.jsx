@@ -6,6 +6,7 @@ import Patients from "./components/Patients";
 import Medications from "./components/Medications";
 import Prescriptions from "./components/Prescriptions";
 import Notifications from "./components/Notifications";
+import './App.css';
 
 // import { api } from "./api";
 
@@ -34,7 +35,7 @@ const App = () => {
   // }
 
   return (
-    <BrowserRouter>
+    <BrowserRouter ClassName = 'container'>
       <Home />
       <Login />
       <Dashboard />
