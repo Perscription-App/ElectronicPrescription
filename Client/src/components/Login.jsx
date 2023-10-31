@@ -48,7 +48,7 @@ const Login = () => {
         type="radio"
         value='Pharmacist'
       />
-      Patient
+      Pharmacist
       </label>
       </span>
       <span>
