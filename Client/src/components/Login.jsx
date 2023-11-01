@@ -25,33 +25,6 @@ const Login = () => {
         onChange={(e) => setPassword(e.target.value)}
       />
       <span>
-        I am a
-      <label>
-      <input
-      className='input'
-        type="radio"
-        value='patient'
-      />
-      Patient
-      </label>
-      <label>
-      <input
-      className='input'
-        type="radio"
-        value='Doctor'
-      />
-      Doctor
-      </label>
-      <label>
-      <input
-      className='input'
-        type="radio"
-        value='Pharmacist'
-      />
-      Pharmacist
-      </label>
-      </span>
-      <span>
       <button onClick={handleSignIn}>Sign In</button>
       <Link to="/register">or click here to register.</Link>
       </span>
@@ -61,8 +34,10 @@ const Login = () => {
   function handleSignIn() {
     fetch('/login', {
       method: 'POST',
-      
-      body: 'username=${username}&password=${password}',
+      body: {
+        username: username,
+        password: password
+      }
     })
     .then((response) => {
       if (response.status === 200) {
