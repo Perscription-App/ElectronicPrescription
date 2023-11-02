@@ -1,11 +1,16 @@
-import { useState, useEffect } from "react";
-import { BrowserRouter } from "react-router-dom";
+import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './App.css';
+import Navbar from "./components/Navbar";
 import Login from "./components/Login";
-import Dashboard from "./components/Dashboard";
-import Patients from "./components/Patients";
-import Medications from "./components/Medications";
-import Prescriptions from "./components/Prescriptions";
-import Notifications from "./components/Notifications";
+import Register from "./components/Register";
+import Dashboard from './components/Dashboard';
+import Patients from './components/Patients';
+import Medications from './components/Medications';
+import Notification from './components/Notifications';
+import Prescriptions from './components/Prescriptions';
+import Layout from "./components/Layout";
+
 
 // import { api } from "./api";
 
@@ -34,15 +39,18 @@ const App = () => {
   // }
 
   return (
-    <BrowserRouter>
-      <Home />
-      <Login />
-      <Dashboard />
-      <Patients />
-      <Medications />
-      <Prescriptions />
-      <Notifications />
-    </BrowserRouter>
+    <BrowserRouter ClassName = 'container'>
+      <Routes>
+        <Route path="/" element = {<Layout />} />
+        <Route path="login" element = {<Login />} />
+        <Route path="register" element = {<Register />} />
+        <Route path="dashboard" element = {<Dashboard />} />
+        <Route path="patients" element = {<Patients />} />
+        <Route path="medications" element = {<Medications />} />
+        <Route path="prescriptions" element = {<Prescriptions />} />
+        <Route path="notifications" element = {<Notification />} />
+      </Routes>
+    </BrowserRouter> 
   );
 };
 
