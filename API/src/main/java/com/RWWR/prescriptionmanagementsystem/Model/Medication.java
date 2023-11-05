@@ -20,4 +20,49 @@ public class Medication {
         generator = "med_sequence"
     )
     private int id;
+
+    private String medName;
+    private String brandName;
+    private String dosage;
+    private String sideEffect; 
+    //-------------getter and setters ---------------------
+    public Medication(){}
+    public Medication(String medName, String brandName, String dosage, String sideEffect) {
+        this.medName = medName; 
+        this.brandName = brandName; 
+        this.dosage = dosage;
+        this.sideEffect = sideEffect;
+    }
+
+    //---------------getter and setters-----------------------
+    public int getMedId() {
+        return id;
+    }
+    public void setMedId(int id) {
+        this.id = id;
+    }
+    public String getMedName() {
+        return medName;
+    }
+    public void setMedName(String medName) {
+        this.medName = medName;
+    }
+    public String getBrand() {
+        return brandName;
+    }
+    public void setBrand(String brandName) {
+        this.brandName = brandName;
+    }
+    public String getDosage() {
+        return dosage;
+    }
+    public void setDosage(String dosage) {
+        this.dosage = dosage;
+    }
+    public String getSideEffect() {
+        return sideEffect;
+    }
+    public void setSideEffect(String sideEffect) {
+        this.sideEffect = sideEffect;
+    }
 }
