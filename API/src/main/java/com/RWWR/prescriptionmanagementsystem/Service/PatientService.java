@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.RWWR.prescriptionmanagementsystem.DAO.PatientRepository;
 import com.RWWR.prescriptionmanagementsystem.Model.Patient;
+import com.RWWR.prescriptionmanagementsystem.Repositiory.PatientRepository;
 
 @Service
 public class PatientService {
