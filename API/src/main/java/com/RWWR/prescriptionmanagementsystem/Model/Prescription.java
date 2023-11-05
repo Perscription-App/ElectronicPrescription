@@ -47,7 +47,7 @@ public class Prescription {
     public String getPName() {
         return patientName;
     }
-    public void setId(String patientName) {
+    public void setPName(String patientName) {
         this.patientName = patientName;
     }
     public Integer getPId() {
