@@ -19,4 +19,12 @@ public class MedService {
     public List<Medication> getAllMedication() {
         return medicationRepository.findAll();
     }
+
+    public Medication createMed(Medication med) {
+        return medicationRepository.save(med);
+    }
+
+    public List<Medication> getMedByMedName(String name) {
+        return medicationRepository.findByMedName(name);
+    }
 }
