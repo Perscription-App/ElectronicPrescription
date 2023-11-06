@@ -3,8 +3,8 @@ server:
 spring:
   datasource: 
     url: jdbc:mysql://aws.connect.psdb.cloud/prescription?sslMode=VERIFY_IDENTITY
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    username: ${6u8jdc8bcl2ul25mbf35}
+    password: ${pscale_pw_iigJh8qzoTQiZ2SuKvRwkxmpo0Zow5sLJ0XfZjDC13i}
   jpa:
     hibernate:
       ddl-auto: create-drop

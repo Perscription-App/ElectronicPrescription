@@ -17,4 +17,11 @@ public class AccountService{
         }
         return account;
     }
+
+    public Account accountExists (Account account){
+        if (repo.findByUsername(account.getUsername()).isPresent()) {
+            return account;
+        }
+        return null;
+    }
 }
