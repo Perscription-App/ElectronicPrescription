@@ -3,6 +3,7 @@ package com.RWWR.prescriptionmanagementsystem.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,13 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.RWWR.prescriptionmanagementsystem.Model.Medication;
 import com.RWWR.prescriptionmanagementsystem.Service.MedService;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 @RestController
 @RequestMapping(path="api/v1/medication")
 public class MedicationController {
     @Autowired
     private MedService medService;
-    
+
     @GetMapping
     public List<Medication> getAllMed() {
         return medService.getAllMedication();
@@ -27,5 +30,15 @@ public class MedicationController {
     @GetMapping("/byMedName/{medName}")
     public List<Medication> getMedByMedName(@PathVariable String medName) {
         return medService.getMedByMedName(medName);
+    }
+
+    @PutMapping(value="/update/{med_id}")
+    public ResponseEntity<String> updateMedication(
+        @PathVariable Integer med_id, 
+        @RequestBody String medName
+    ) {
+        //TODO: process PUT request
+        medService.updateMedicine(med_id, medName);
+        return ResponseEntity.ok("Fields updated seccessfully");
     }
 }
