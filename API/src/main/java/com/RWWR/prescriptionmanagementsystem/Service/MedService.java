@@ -27,4 +27,8 @@ public class MedService {
     public List<Medication> getMedByMedName(String name) {
         return medicationRepository.findByMedName(name);
     }
+
+    public void updateMedicine(Integer med_id, String medName) {
+        medicationRepository.updateMedName(med_id, medName);
+    }
 }
