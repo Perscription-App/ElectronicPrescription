@@ -1,7 +1,8 @@
 package com.RWWR.prescriptionmanagementsystem.Service;
 
-import com.RWWR.prescriptionmanagementsystem.DAO.AccountRepository;
 import com.RWWR.prescriptionmanagementsystem.Model.Account;
+import com.RWWR.prescriptionmanagementsystem.Repositiory.AccountRepository;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Service;
 
