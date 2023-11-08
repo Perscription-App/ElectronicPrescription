@@ -13,13 +13,8 @@ public class RegistrationController {
 
     public RegistrationController(AccountService service) { this.service = service;}
     record NewAccount (String username, String Password, Integer isDoctor) {}
-    @GetMapping
-    public Account registerAccount(@RequestBody NewAccount request) throws Exception {
-        Account account = new Account(request.username(), request.Password(), request.isDoctor());
-        return service.newAccount(account);
-    }
 
-    @PostMapping("/register")
+    @PostMapping("/account")
     public ResponseEntity<?> registerAccount(@RequestBody NewAccount request) {
         try {
             Account account = new Account(request.getUsername(), request.getPassword(), request.getIsDoctor());
