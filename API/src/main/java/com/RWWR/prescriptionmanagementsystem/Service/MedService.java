@@ -28,7 +28,7 @@ public class MedService {
         return medicationRepository.findByMedName(name);
     }
 
-    public void updateMedicine(Integer med_id, String medName) {
-        medicationRepository.updateMedName(med_id, medName);
+    public void updateMedicine(Integer med_id, String medName, String brandName, String dosage, String sideEffect) {
+        medicationRepository.updateMedName(med_id, medName, brandName, dosage, sideEffect);
     }
 }

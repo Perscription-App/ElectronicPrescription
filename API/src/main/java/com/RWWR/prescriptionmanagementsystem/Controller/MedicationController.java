@@ -35,10 +35,13 @@ public class MedicationController {
     @PutMapping(value="/update/{med_id}")
     public ResponseEntity<String> updateMedication(
         @PathVariable Integer med_id, 
-        @RequestBody String medName
+        @RequestBody String medName,
+        @RequestBody String brandName,
+        @RequestBody String dosage,
+        @RequestBody String sideEffect
     ) {
         //TODO: process PUT request
-        medService.updateMedicine(med_id, medName);
+        medService.updateMedicine(med_id, medName, brandName, dosage, sideEffect);
         return ResponseEntity.ok("Fields updated seccessfully");
     }
 }
