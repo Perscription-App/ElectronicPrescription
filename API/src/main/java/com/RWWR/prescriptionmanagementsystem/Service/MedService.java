@@ -28,6 +28,15 @@ public class MedService {
         return medicationRepository.findByMedName(name);
     }
 
+    public Medication addMedication(String medName, String brandName, String dosage, String sideEffect) {
+        Medication newMed = new Medication();
+        newMed.setMedName(medName);
+        newMed.setBrand(brandName);
+        newMed.setDosage(dosage);
+        newMed.setSideEffect(sideEffect);
+        return medicationRepository.save(newMed);
+    }
+
     public void updateMedicine(Integer med_id, String medName, String brandName, String dosage, String sideEffect) {
         medicationRepository.updateMedName(med_id, medName, brandName, dosage, sideEffect);
     }

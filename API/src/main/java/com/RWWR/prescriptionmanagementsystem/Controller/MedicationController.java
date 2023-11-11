@@ -32,6 +32,12 @@ public class MedicationController {
         return medService.getMedByMedName(medName);
     }
 
+    @PostMapping("/addMed")
+    public ResponseEntity<Medication> addMedication(@RequestBody Medication newMed) {
+        Medication createdMed = medService.addMedication(newMed.getMedName(), newMed.getBrand(), newMed.getDosage(), newMed.getSideEffect());
+        return ResponseEntity.ok(createdMed);
+    }
+
     @PutMapping(value="/update/{med_id}")
     public ResponseEntity<String> updateMedication(
         @PathVariable Integer med_id, 
