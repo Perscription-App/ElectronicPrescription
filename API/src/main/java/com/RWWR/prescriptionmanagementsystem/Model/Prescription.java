@@ -30,6 +30,7 @@ public class Prescription {
 
     private String patientName; 
     private int patient_id; 
+    private int med_id;
     //-------------getter and setters ---------------------
     public Prescription(){}
     public Prescription(String patientName, int patient_id) {
@@ -55,6 +56,12 @@ public class Prescription {
     }
     public void setPId(int patient_Id) {
         this.patient_id = patient_Id;
+    }
+    public int getMId() {
+        return med_id;
+    }
+    public void setMId(int med_id) {
+        this.med_id = med_id;
     }
 
     
