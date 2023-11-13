@@ -38,7 +38,7 @@ public class Medication {
     public int getMedId() {
         return med_id;
     }
-    public void setMedId(int id) {
+    public void setMedId(int med_id) {
         this.med_id = med_id;
     }
     public String getMedName() {
