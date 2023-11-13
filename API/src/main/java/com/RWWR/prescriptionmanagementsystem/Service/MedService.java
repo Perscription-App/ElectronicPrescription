@@ -1,5 +1,6 @@
 package com.RWWR.prescriptionmanagementsystem.Service;
 
+
 import com.RWWR.prescriptionmanagementsystem.Model.Account;
 import com.RWWR.prescriptionmanagementsystem.Model.Medication;
 import com.RWWR.prescriptionmanagementsystem.Repositiory.AccountRepository;
@@ -28,7 +29,11 @@ public class MedService {
         return medicationRepository.findByMedName(name);
     }
 
-    public void updateMedicine(Integer med_id, String medName) {
-        medicationRepository.updateMedName(med_id, medName);
+    public void updateMedicine(Integer med_id, Medication medicationUpdateDTO) {
+        Medication existingMedication = medicationRepository.findById(med_id).orElse(null);
+        if (existingMedication != null) {
+            existingMedication.setMedName(medicationUpdateDTO.getMedName());
+            medicationRepository.save(existingMedication);
+        }
     }
 }

@@ -12,9 +12,9 @@ public class RegistrationController {
     private final AccountService service;
 
     public RegistrationController(AccountService service) { this.service = service;}
-    record NewAccount (String username, String Password, Integer isDoctor) {}
+    record NewAccount (@NotBlank String username, @NotBlank String password, @Min(0) Integer isDoctor) {}
 
-    @PostMapping("/account")
+    @PostMapping("/account"}
     public ResponseEntity<?> registerAccount(@RequestBody NewAccount request) {
         try {
             Account account = new Account(request.getUsername(), request.getPassword(), request.getIsDoctor());
@@ -39,6 +39,10 @@ public class RegistrationController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Login failed: " + e.getMessage());
         }
     }
+
+
+
+
 }
-}
+
 

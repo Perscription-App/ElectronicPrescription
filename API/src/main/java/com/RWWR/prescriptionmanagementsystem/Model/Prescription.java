@@ -6,6 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 
+import java.time.LocalDateTime;
+
 
 /*
  * Prescription Creation: Allow healthcare professionals (doctors, nurses, etc.) to 
@@ -29,7 +31,9 @@ public class Prescription {
     private int id;
 
     private String patientName; 
-    private Integer patient_id; 
+    private Integer patient_id;
+
+    private LocalDateTime creation_time;
     //-------------getter and setters ---------------------
     public Prescription(){}
     public Prescription(String patientName, Integer patient_id) {
@@ -56,6 +60,8 @@ public class Prescription {
     public void setPId(Integer patient_Id) {
         this.patient_id = patient_Id;
     }
+
+    public void setCreationTime(LocalDateTime time){this.creation_time = time;}
 
     
     

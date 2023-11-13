@@ -32,12 +32,11 @@ public class PatientController {
     /**
      * NewPatientRequest
      */
-    record NewPatientRequest(String name, Gender gender, int age) {
-    }
+    record NewPatientRequest(String name, Gender gender, int age) { }
     @PostMapping
-    public void addPatient(@RequestBody NewPatientRequest request){
-        Patient patient = new Patient(request.name, request.gender, request.age); 
-        service.addPatient(patient); 
-
+    public ResponseEntity<String> addPatient(@RequestBody NewPatientRequest request) {
+        Patient patient = new Patient(request.name, request.gender, request.age);
+        service.addPatient(patient);
+        return ResponseEntity.ok("Patient added successfully");
     }
 }
