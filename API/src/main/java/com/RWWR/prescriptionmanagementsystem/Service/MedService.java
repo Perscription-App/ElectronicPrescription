@@ -24,8 +24,12 @@ public class MedService {
         return medicationRepository.save(med);
     }
 
-    public List<Medication> getMedByMedName(String name) {
-        return medicationRepository.findByMedName(name);
+    public List<Medication> getMedByMedName(String medName) {
+        return medicationRepository.findByMedName(medName);
+    }
+
+    public List<Medication> getMedByBrandName(String brandName) {
+        return medicationRepository.findByBrandName(brandName);
     }
 
     public Medication addMedication(String medName, String brandName, String dosage, String sideEffect) {

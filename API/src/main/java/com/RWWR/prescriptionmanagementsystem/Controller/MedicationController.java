@@ -33,6 +33,11 @@ public class MedicationController {
         return medService.getMedByMedName(medName);
     }
 
+    @GetMapping("/byBrandName/{brandName}")
+    public List<Medication> getMedByBrandName(@PathVariable String brandName) {
+        return medService.getMedByBrandName(brandName);
+    }
+
     @PostMapping("/addMed")
     public ResponseEntity<Medication> addMedication(@RequestBody Medication newMed) {
         Medication createdMed = medService.addMedication(newMed.getMedName(), newMed.getBrand(), newMed.getDosage(), newMed.getSideEffect());
