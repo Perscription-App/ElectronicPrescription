@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,13 +33,32 @@ public class MedicationController {
         return medService.getMedByMedName(medName);
     }
 
+    @GetMapping("/byBrandName/{brandName}")
+    public List<Medication> getMedByBrandName(@PathVariable String brandName) {
+        return medService.getMedByBrandName(brandName);
+    }
+
+    @PostMapping("/addMed")
+    public ResponseEntity<Medication> addMedication(@RequestBody Medication newMed) {
+        Medication createdMed = medService.addMedication(newMed.getMedName(), newMed.getBrand(), newMed.getDosage(), newMed.getSideEffect());
+        return ResponseEntity.ok(createdMed);
+    }
+
     @PutMapping(value="/update/{med_id}")
     public ResponseEntity<String> updateMedication(
         @PathVariable Integer med_id, 
-        @RequestBody String medName
+        @RequestBody String medName,
+        @RequestBody String brandName,
+        @RequestBody String dosage,
+        @RequestBody String sideEffect
     ) {
-        //TODO: process PUT request
-        medService.updateMedicine(med_id, medName);
+        medService.updateMedicine(med_id, medName, brandName, dosage, sideEffect);
         return ResponseEntity.ok("Fields updated seccessfully");
+    }
+
+    @DeleteMapping("/{med_id}") 
+    public ResponseEntity<String> deleteMed(@PathVariable int med_id) {
+        medService.deleteMed(med_id);
+        return ResponseEntity.ok("Medication deleted seccessfully");
     }
 }

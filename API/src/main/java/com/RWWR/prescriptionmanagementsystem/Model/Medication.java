@@ -17,9 +17,9 @@ public class Medication {
     )
     @GeneratedValue(
         strategy = GenerationType.SEQUENCE, 
-        generator = "med_sequence"
+        generator = "med_id_sequence"
     )
-    private int id;
+    private int med_id;
 
     private String medName;
     private String brandName;
@@ -36,10 +36,10 @@ public class Medication {
 
     //---------------getter and setters-----------------------
     public int getMedId() {
-        return id;
+        return med_id;
     }
-    public void setMedId(int id) {
-        this.id = id;
+    public void setMedId(int med_id) {
+        this.med_id = med_id;
     }
     public String getMedName() {
         return medName;

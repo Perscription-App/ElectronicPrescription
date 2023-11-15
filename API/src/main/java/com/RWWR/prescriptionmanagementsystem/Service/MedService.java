@@ -24,11 +24,28 @@ public class MedService {
         return medicationRepository.save(med);
     }
 
-    public List<Medication> getMedByMedName(String name) {
-        return medicationRepository.findByMedName(name);
+    public List<Medication> getMedByMedName(String medName) {
+        return medicationRepository.findByMedName(medName);
     }
 
-    public void updateMedicine(Integer med_id, String medName) {
-        medicationRepository.updateMedName(med_id, medName);
+    public List<Medication> getMedByBrandName(String brandName) {
+        return medicationRepository.findByBrandName(brandName);
+    }
+
+    public Medication addMedication(String medName, String brandName, String dosage, String sideEffect) {
+        Medication newMed = new Medication();
+        newMed.setMedName(medName);
+        newMed.setBrand(brandName);
+        newMed.setDosage(dosage);
+        newMed.setSideEffect(sideEffect);
+        return medicationRepository.save(newMed);
+    }
+
+    public void deleteMed(int med_id) {
+        medicationRepository.deleteById(med_id);
+    }
+
+    public void updateMedicine(Integer med_id, String medName, String brandName, String dosage, String sideEffect) {
+        medicationRepository.updateMedName(med_id, medName, brandName, dosage, sideEffect);
     }
 }

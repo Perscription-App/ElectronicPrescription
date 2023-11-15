@@ -24,25 +24,26 @@ public class Prescription {
     )
     @GeneratedValue(
         strategy = GenerationType.SEQUENCE, 
-        generator = "prescription_sequence"
+        generator = "prescription_id_sequence"
     )
-    private int id;
+    private int prescription_id;
 
     private String patientName; 
-    private Integer patient_id; 
+    private int patient_id; 
+    private int med_id;
     //-------------getter and setters ---------------------
     public Prescription(){}
-    public Prescription(String patientName, Integer patient_id) {
+    public Prescription(String patientName, int patient_id) {
         this.patientName = patientName; 
         this.patient_id = patient_id; 
     }
 
     //---------------getter and setters-----------------------
-    public int getId() {
-        return id;
+    public int getPrescriptionId() {
+        return prescription_id;
     }
-    public void setId(int id) {
-        this.id = id;
+    public void setPrescriptionId(int prescription_id) {
+        this.prescription_id = prescription_id;
     }
     public String getPName() {
         return patientName;
@@ -50,11 +51,17 @@ public class Prescription {
     public void setPName(String patientName) {
         this.patientName = patientName;
     }
-    public Integer getPId() {
+    public int getPId() {
         return patient_id;
     }
-    public void setPId(Integer patient_Id) {
+    public void setPId(int patient_Id) {
         this.patient_id = patient_Id;
+    }
+    public int getMId() {
+        return med_id;
+    }
+    public void setMId(int med_id) {
+        this.med_id = med_id;
     }
 
     
