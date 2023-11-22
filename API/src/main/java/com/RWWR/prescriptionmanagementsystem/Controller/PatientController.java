@@ -25,7 +25,7 @@ public class PatientController {
 
     @GetMapping
     public List<Patient> getpatients(){
-        System.out.println("We did it");
+        //System.out.println("We did it");
         return service.getpatients(); 
     }
 
