@@ -30,8 +30,13 @@ public class Prescription {
     //-------------foreign keys ---------------------
     private Account patient; 
     private Medication med;
+    // 0 = inactive 
+    // 1 = active
+    private int isActive;
     //-------------getter and setters ---------------------
-    public Prescription(){}
+    public Prescription(int isActive){
+        this.isActive = isActive;
+    }
 
     public Account getPatient() {
         return patient;
@@ -46,7 +51,11 @@ public class Prescription {
     public void setMId(Medication med) {
         this.med = med;
     }
-
-    
+    public int getActive() { 
+        return isActive;
+    }
+    public void setActive(int isActive) {
+        this.isActive = isActive;
+    }
     
 }
