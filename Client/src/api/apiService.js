@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = '';
+const API_BASE_URL = 'jdbc:mysql://aws.connect.psdb.cloud/prescription?sslMode=VERIFY_IDENTITY';
 
 const apiService = {
     getAllMedication: async () => {

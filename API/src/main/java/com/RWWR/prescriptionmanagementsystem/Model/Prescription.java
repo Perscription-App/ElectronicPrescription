@@ -27,41 +27,24 @@ public class Prescription {
         generator = "prescription_id_sequence"
     )
     private int prescription_id;
-
-    private String patientName; 
-    private int patient_id; 
-    private int med_id;
+    //-------------foreign keys ---------------------
+    private Account patient; 
+    private Medication med;
     //-------------getter and setters ---------------------
     public Prescription(){}
-    public Prescription(String patientName, int patient_id) {
-        this.patientName = patientName; 
-        this.patient_id = patient_id; 
-    }
 
-    //---------------getter and setters-----------------------
-    public int getPrescriptionId() {
-        return prescription_id;
+    public Account getPatient() {
+        return patient;
     }
-    public void setPrescriptionId(int prescription_id) {
-        this.prescription_id = prescription_id;
+    public void setPrescriptionId(Account patient) {
+        this.patient = patient;
     }
-    public String getPName() {
-        return patientName;
+    
+    public Medication getMId() {
+        return med;
     }
-    public void setPName(String patientName) {
-        this.patientName = patientName;
-    }
-    public int getPId() {
-        return patient_id;
-    }
-    public void setPId(int patient_Id) {
-        this.patient_id = patient_Id;
-    }
-    public int getMId() {
-        return med_id;
-    }
-    public void setMId(int med_id) {
-        this.med_id = med_id;
+    public void setMId(Medication med) {
+        this.med = med;
     }
 
     

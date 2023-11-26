@@ -24,12 +24,18 @@ public class Account {
     private String username;
     private String password;
     private int isDoctor;
+    private String name; 
+    private int age; 
+    private Gender gender;
 
     public Account(){}
-    public Account(String username, String password, int isDoctor) {
+    public Account(String username, String password, int isDoctor, String name, int age, Gender gender) {
         this.username = username; 
         this.password = password;
         this.isDoctor = isDoctor;
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
     }
     //---------------getter and setters-----------------------
     public int getAccountId() {
@@ -55,5 +61,23 @@ public class Account {
     }
     public void setOccupation(int isDoctor) {
         this.isDoctor = isDoctor;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
+    public Gender getGender() {
+        return gender;
+    }
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 }
