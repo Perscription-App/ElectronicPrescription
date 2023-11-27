@@ -8,24 +8,29 @@ import org.springframework.stereotype.Service;
 
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.RWWR.prescriptionmanagementsystem.Model.Account;
-import com.RWWR.prescriptionmanagementsystem.Repositiory.AccountRepository;
+import com.RWWR.prescriptionmanagementsystem.Model.Gender;
+import com.RWWR.prescriptionmanagementsystem.Model.Patient;
+import com.RWWR.prescriptionmanagementsystem.Repositiory.PatientRepository;
 import com.RWWR.prescriptionmanagementsystem.Model.Prescription;
 import com.RWWR.prescriptionmanagementsystem.Repositiory.PrescriptionRepository;
 
 @Service
 public class PatientService {
     @Autowired
-    private AccountRepository accountRepository; 
+    private PatientRepository patientRepository; 
     @Autowired
     private PrescriptionRepository prescriptionRepository; 
-
-    public List<Account> getAllPatients() {
-        return accountRepository.findAll();
+    // gathers every patient
+    public List<Patient> getAllPatients() {
+        return patientRepository.findAll();
     }
-
+    // sees user's prescription history
     public List<Prescription> getPrescriptionForUser(int id) {
         return prescriptionRepository.findByPatientId(id);
+    }
+    // updates patient info
+    public void updatePatientInfo(int patient_id, String name, int age, Gender gender) {
+        patientRepository.updatePatient(patient_id, name, age, gender);
     }
 
 }

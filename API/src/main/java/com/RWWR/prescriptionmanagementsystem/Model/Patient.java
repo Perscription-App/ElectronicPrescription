@@ -33,7 +33,7 @@ public class Patient{
     private String name; 
     private int age; 
     private Gender gender;
-    private int user_id;
+    private Account account;
 
     //no args constructer and 2 args constructor
     public Patient(){}
@@ -68,11 +68,11 @@ public class Patient{
     public void setGender(Gender gender) {
         this.gender = gender;
     } 
-    public int getUserId() {
-        return user_id;
+    public Account getUserId() {
+        return account;
     }
-    public void setUserId(int user_id) {
-        this.user_id = user_id;
+    public void setUserId(Account account) {
+        this.account = account;
     }
 
 }

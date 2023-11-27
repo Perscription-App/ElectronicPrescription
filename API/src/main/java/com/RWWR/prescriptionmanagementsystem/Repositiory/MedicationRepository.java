@@ -20,6 +20,6 @@ public interface MedicationRepository extends JpaRepository<Medication, Integer>
 
     @Modifying
     @Transactional
-    @Query("UPDATE Medication i SET i.medName = :medName, i.brandName = :brandName, i.dosage = :dosage, i.sideEffect = :sideEffect WHERE i.med_id = :_med_id")
-    void updateMedName(@Param("_med_id") Integer med_id, @Param("medName") String medName, @Param("brandName") String brandName, @Param("dosage") String dosage, @Param("sideEffect") String sideEffect);
+    @Query("UPDATE Medication i SET i.medName = :medName, i.brandName = :brandName, i.dosage = :dosage, i.sideEffect = :sideEffect WHERE i.med_id = :med_id")
+    void updateMedName(@Param("med_id") Integer med_id, @Param("medName") String medName, @Param("brandName") String brandName, @Param("dosage") String dosage, @Param("sideEffect") String sideEffect);
 }
