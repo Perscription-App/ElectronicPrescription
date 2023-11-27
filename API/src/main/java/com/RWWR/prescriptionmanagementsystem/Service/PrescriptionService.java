@@ -27,7 +27,7 @@ public class PrescriptionService {
     public Prescription getPrescriptionByID(int prescription_id) {
         return prescriptionRepository.findByPrescriptionID(prescription_id);
     }
-
+    
     // edit prescription
     public void updatePrescription(int prescription_id, Account account, Medication med, int isActive) {
         prescriptionRepository.updatePrescription(prescription_id, account, med, isActive);

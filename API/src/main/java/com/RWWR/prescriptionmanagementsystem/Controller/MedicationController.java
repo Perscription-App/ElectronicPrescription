@@ -23,27 +23,32 @@ public class MedicationController {
     @Autowired
     private MedService medService;
 
+    // lists all medication
     @GetMapping
     public List<Medication> getAllMed() {
         return medService.getAllMedication();
     }
 
+    // lists items with med name
     @GetMapping("/byMedName/{medName}")
     public List<Medication> getMedByMedName(@PathVariable String medName) {
         return medService.getMedByMedName(medName);
     }
 
+    // lists items with brand name
     @GetMapping("/byBrandName/{brandName}")
     public List<Medication> getMedByBrandName(@PathVariable String brandName) {
         return medService.getMedByBrandName(brandName);
     }
 
+    // adds medication to table
     @PostMapping("/addMed")
     public ResponseEntity<Medication> addMedication(@RequestBody Medication newMed) {
         Medication createdMed = medService.addMedication(newMed.getMedName(), newMed.getBrand(), newMed.getDosage(), newMed.getSideEffect());
         return ResponseEntity.ok(createdMed);
     }
 
+    // updates medication in table
     @PutMapping(value="/update/{med_id}")
     public ResponseEntity<String> updateMedication(
         @PathVariable Integer med_id, 
@@ -56,6 +61,7 @@ public class MedicationController {
         return ResponseEntity.ok("Fields updated seccessfully");
     }
 
+    // removes medication from table
     @DeleteMapping("/{med_id}") 
     public ResponseEntity<String> deleteMed(@PathVariable int med_id) {
         medService.deleteMed(med_id);

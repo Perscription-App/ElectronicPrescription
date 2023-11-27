@@ -22,6 +22,7 @@ public class PatientController {
     @Autowired
     private PatientService service; 
 
+    // lists all the patients
     @GetMapping
     public List<Patient> getpatients(){
         return service.getAllPatients(); 

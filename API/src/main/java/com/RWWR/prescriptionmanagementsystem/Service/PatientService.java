@@ -15,16 +15,20 @@ import com.RWWR.prescriptionmanagementsystem.Repositiory.PrescriptionRepository;
 public class PatientService {
     @Autowired
     private PatientRepository patientRepository; 
+    
     @Autowired
     private PrescriptionRepository prescriptionRepository; 
+    
     // gathers every patient
     public List<Patient> getAllPatients() {
         return patientRepository.findAll();
     }
+
     // sees user's prescription history
     public List<Prescription> getPrescriptionForUser(int id) {
         return prescriptionRepository.findByPatientId(id);
     }
+
     // updates patient info
     public void updatePatientInfo(int patient_id, String name, int age, Gender gender) {
         patientRepository.updatePatient(patient_id, name, age, gender);
