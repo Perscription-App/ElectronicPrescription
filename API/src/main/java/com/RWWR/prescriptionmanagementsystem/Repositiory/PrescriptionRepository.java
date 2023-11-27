@@ -17,7 +17,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PrescriptionRepository extends JpaRepository<Prescription, Integer> {
     Prescription findByPrescriptionID(int prescription_id);
-    
+    List<Prescription> findByPatientId(int id);
+
     @Modifying
     @Transactional
     @Query("UPDATE Prescription i SET i.patient = :patient, i.med = :med, i.isActive = :isActive WHERE i.prescription_id = :prescription_id")
