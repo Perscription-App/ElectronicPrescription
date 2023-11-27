@@ -14,7 +14,7 @@ public class RegistrationController {
     public RegistrationController(AccountService service) { this.service = service;}
     record NewAccount (@NotBlank String username, @NotBlank String password, @Min(0) Integer isDoctor) {}
 
-    @PostMapping("/account"}
+    @PostMapping("/account")
     public ResponseEntity<?> registerAccount(@RequestBody NewAccount request) {
         try {
             Account account = new Account(request.getUsername(), request.getPassword(), request.getIsDoctor());
