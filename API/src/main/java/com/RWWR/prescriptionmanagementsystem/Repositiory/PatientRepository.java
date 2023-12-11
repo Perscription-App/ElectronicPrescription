@@ -17,6 +17,6 @@ public interface PatientRepository extends JpaRepository<Patient,Integer>{
 
     @Modifying
     @Transactional
-    @Query("UPDATE Patient i SET i.name = :name, i.age = :age, i.gender = :gender WHERE i.patient_id = :patient_id")
-    void updatePatient(@Param("patient_id") int patient_id, @Param("name") String name, @Param("age") int age, @Param("gender") Gender gender);
+    @Query("UPDATE Patient p SET p.name = :name, p.age = :age, p.gender = :gender WHERE p.patientId = :patientId")
+    void updatePatient(@Param("patientId") int patientId, @Param("name") String name, @Param("age") int age, @Param("gender") Gender gender);
 }

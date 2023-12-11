@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Transient;
 
 
 /*
@@ -26,10 +27,10 @@ public class Prescription {
         strategy = GenerationType.SEQUENCE, 
         generator = "prescription_id_sequence"
     )
-    private int prescription_id;
+    private int prescriptionId;
     //-------------foreign keys ---------------------
-    private Account patient; 
-    private Medication med;
+    private int accountId; 
+    private int medId;
     // 0 = inactive 
     // 1 = active
     private int isActive;
@@ -38,18 +39,18 @@ public class Prescription {
         this.isActive = isActive;
     }
 
-    public Account getPatient() {
-        return patient;
+    public int getAccountId() {
+        return accountId;
     }
-    public void setPrescriptionId(Account patient) {
-        this.patient = patient;
+    public void setAccountId(int patient) {
+        this.accountId = patient;
     }
     
-    public Medication getMId() {
-        return med;
+    public int getMId() {
+        return medId;
     }
-    public void setMId(Medication med) {
-        this.med = med;
+    public void setMId(int med) {
+        this.medId = med;
     }
     public int getActive() { 
         return isActive;

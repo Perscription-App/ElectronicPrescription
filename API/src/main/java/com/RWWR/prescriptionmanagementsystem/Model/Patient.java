@@ -24,7 +24,7 @@ public class Patient{
         strategy = GenerationType.SEQUENCE, 
         generator = "patient_id_sequence"
     )
-    private int patient_id; 
+    private int patientId; 
     
     // INITIALIZE FIELDS,  patient records, including personal 
     //information, medical history, and prescription history.
@@ -33,7 +33,7 @@ public class Patient{
     private String name; 
     private int age; 
     private Gender gender;
-    private Account account;
+    private int accountId;
 
     //no args constructer and 2 args constructor
     public Patient(){}
@@ -45,10 +45,10 @@ public class Patient{
 
     //---------------getter and setters-----------------------
     public int getPatientId() {
-        return patient_id;
+        return patientId;
     }
     public void setPatientId(int patient_id) {
-        this.patient_id = patient_id;
+        this.patientId = patient_id;
     }
     public String getName() {
         return name;
@@ -68,11 +68,11 @@ public class Patient{
     public void setGender(Gender gender) {
         this.gender = gender;
     } 
-    public Account getUserId() {
-        return account;
+    public int getUserId() {
+        return accountId;
     }
-    public void setUserId(Account account) {
-        this.account = account;
+    public void setUserId(int account) {
+        this.accountId = account;
     }
 
 }
