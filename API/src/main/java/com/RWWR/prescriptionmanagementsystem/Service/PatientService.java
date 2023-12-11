@@ -26,7 +26,7 @@ public class PatientService {
 
     // sees user's prescription history
     public List<Prescription> getPrescriptionForUser(int id) {
-        return prescriptionRepository.findByPatientId(id);
+        return prescriptionRepository.findByAccountId(id);
     }
 
     // updates patient info

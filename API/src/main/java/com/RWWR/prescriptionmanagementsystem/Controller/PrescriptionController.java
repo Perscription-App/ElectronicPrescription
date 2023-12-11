@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.RWWR.prescriptionmanagementsystem.Model.Account;
-import com.RWWR.prescriptionmanagementsystem.Model.Medication;
 import com.RWWR.prescriptionmanagementsystem.Model.Prescription;
 import com.RWWR.prescriptionmanagementsystem.Service.PrescriptionService;
 
@@ -24,25 +22,25 @@ public class PrescriptionController {
 
     @PostMapping("/addPrescription")
     public ResponseEntity<Prescription> createPrescription(@RequestBody Prescription prescription){
-        Prescription createdPrescription = service.createPrescription(prescription.getPatient(), prescription.getMId(), prescription.getActive());
+        Prescription createdPrescription = service.createPrescription(prescription.getAccountId(), prescription.getMId(), prescription.getActive());
         return ResponseEntity.ok(createdPrescription); 
     }
 
     // prescription history
     @GetMapping("/{prescription}")
-    public Prescription getPrescriptionByID(@PathVariable int prescription_id) {
-        return service.getPrescriptionByID(prescription_id);
+    public Prescription getPrescriptionByID(@PathVariable int prescriptionId) {
+        return service.getPrescriptionByID(prescriptionId);
     }
 
     // update patient info
-    @PutMapping(value="/update/{prescription_id}")
+    @PutMapping(value="/update/{prescriptionId}")
     public ResponseEntity<String> updatePatient(
-        @PathVariable int prescription_id, 
-        @RequestBody Account account,
-        @RequestBody Medication med,
+        @PathVariable int prescriptionId, 
+        @RequestBody int account,
+        @RequestBody int med,
         @RequestBody int isActive
     ) {
-        service.updatePrescription(prescription_id, account, med, isActive);
+        service.updatePrescription(prescriptionId, account, med, isActive);
         return ResponseEntity.ok("Fields updated seccessfully");
     }
 }
