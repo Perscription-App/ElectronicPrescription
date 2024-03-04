@@ -5,10 +5,17 @@ import { Link } from 'react-router-dom';
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+/*
+  const handleSignIn = () => {
+    console.log("Signing in with: ", username, password);
+  }
 
+  const handleCreateAccount = () => {
+    console.log("Creating account with: ", username, password);
+  }*/
   return (
     <div className="container">
-      <h1>Welcome to our App!</h1>
+      <h1>Login</h1>
       <p>Please sign in to continue.</p>
       <input
       className='input'
@@ -53,5 +60,3 @@ const Login = () => {
 };
   
 export default Login;
-  
-  

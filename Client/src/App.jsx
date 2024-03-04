@@ -42,13 +42,13 @@ const App = () => {
     <BrowserRouter ClassName = 'container'>
       <Routes>
         <Route path="/" element = {<Layout />} />
-        <Route path="login" element = {<Login />} />
-        <Route path="register" element = {<Register />} />
-        <Route path="dashboard" element = {<Dashboard />} />
-        <Route path="patients" element = {<Patients />} />
-        <Route path="medications" element = {<Medications />} />
-        <Route path="prescriptions" element = {<Prescriptions />} />
-        <Route path="notifications" element = {<Notification />} />
+        <Route path="/login" element = {<Login />} />
+        <Route path="/register" element = {<Register />} />
+        <Route path="/dashboard" element = {<Dashboard />} />
+        <Route path="/patients" element = {<Patients />} />
+        <Route path="/medications" element = {<Medications />} />
+        <Route path="/prescriptions" element = {<Prescriptions />} />
+        <Route path="/notifications" element = {<Notification />} />
       </Routes>
     </BrowserRouter> 
   );

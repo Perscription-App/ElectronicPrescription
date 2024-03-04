@@ -7,8 +7,16 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface AccountRepository  extends JpaRepository<Account, Integer> {
-    public Optional<Account> findByUsername(String email);
+public interface AccountRepository extends JpaRepository<Account, String> {
+    public Optional<Account> findByUsername(String username);
 
+    public default boolean checkPassword(String username, String password) {
+        Optional<Account> optionalAccount = findByUsername(username);
+        if (optionalAccount.isPresent()) {
+            Account account = optionalAccount.get();
+            return password.equals(account.getPass());
+        }
 
+        return false;
+    }
 }
