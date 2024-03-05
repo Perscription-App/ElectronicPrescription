@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Register.css';
+import Navbar from './Navbar';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -26,7 +27,10 @@ const Register = () => {
   }
 
   return (
-    <div className="container">
+    <div>
+      <div className="relative"  style={{ marginTop: '50px' }}>
+        <Navbar/>
+      </div>
       <h1>Welcome to our App!</h1>
       <p>Please enter a username and password.</p>
       <input

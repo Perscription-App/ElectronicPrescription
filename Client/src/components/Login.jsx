@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css';
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -14,7 +15,10 @@ const Login = () => {
     console.log("Creating account with: ", username, password);
   }*/
   return (
-    <div className="container">
+    <div>
+      <div className="relative"  style={{ marginTop: '50px' }}>
+        <Navbar/>
+      </div>
       <h1>Login</h1>
       <p>Please sign in to continue.</p>
       <input

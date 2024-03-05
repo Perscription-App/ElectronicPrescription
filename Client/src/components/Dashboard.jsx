@@ -1,11 +1,15 @@
+import Navbar from "./Navbar";
+
 const Dashboard = () => {
   return (
     <div>
-      <h1>Dashboard</h1>
+      <div className="relative"  style={{ marginTop: '50px' }}>
+        <Navbar/>
+      </div>
       <p>This is the dashboard component.</p>
     </div>
   );
-};
+}
 
 export default Dashboard;
 
