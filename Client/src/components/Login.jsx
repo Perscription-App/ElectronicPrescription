@@ -14,9 +14,14 @@ const Login = () => {
   const handleCreateAccount = () => {
     console.log("Creating account with: ", username, password);
   }*/
+  // This needs to be the first thing the user sees
+
+  // When logged out you should come back to this screen
+
+  // remove the navbar when finished testing
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <div className="relative"  style={{ marginTop: '50px' }}>
+    <div className="flex">
+      <div className="w-full flex justify-center items-center mt-16">
         <Navbar/>
       </div>
       <h1>Login</h1>

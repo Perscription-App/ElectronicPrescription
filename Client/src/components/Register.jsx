@@ -25,14 +25,15 @@ const Register = () => {
       alert(error);
     })
   }
-
+// remove the navbar after testing
+// should only come here when the user is signed out
   return (
     <div>
-      <div className="relative"  style={{ marginTop: '50px' }}>
+      <div className="w-full flex justify-center items-center mt-16">
         <Navbar/>
       </div>
-      <h1>Welcome to our App!</h1>
-      <p>Please enter a username and password.</p>
+      <h1 className="mt-12">Welcome to our App!</h1>
+      <p className="mt-8">Please enter a username and password.</p>
       <input
       className='input'
         type="text"
