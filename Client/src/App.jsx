@@ -1,15 +1,14 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
-import Navbar from "./components/Navbar";
 import Login from "./components/Login";
+import Profile from "./components/Profile";
 import Register from "./components/Register";
 import Dashboard from './components/Dashboard';
 import Patients from './components/Patients';
 import Medications from './components/Medications';
 import Notification from './components/Notifications';
 import Prescriptions from './components/Prescriptions';
-import Layout from "./components/Layout";
 
 
 // import { api } from "./api";
@@ -37,18 +36,21 @@ const App = () => {
   //   // Redirect to the login page if the user is not logged in
   //   return <Login />;
   // }
+// change the login to an icon once the user is logged in
+  // in that icon, user can click on the icon to release a drop down menu
+    // menu includes, profile and logout buttons
 
+  // patients and medication will not be visible to users with role "patient"
   return (
-    <BrowserRouter ClassName = 'container'>
+    <BrowserRouter>
       <Routes>
-        <Route path="/" element = {<Layout />} />
-        <Route path="login" element = {<Login />} />
-        <Route path="register" element = {<Register />} />
-        <Route path="dashboard" element = {<Dashboard />} />
-        <Route path="patients" element = {<Patients />} />
-        <Route path="medications" element = {<Medications />} />
-        <Route path="prescriptions" element = {<Prescriptions />} />
-        <Route path="notifications" element = {<Notification />} />
+        <Route path="/" element = {<Dashboard />} />
+        <Route path="/profile" element = {<Profile />} />
+        <Route path="/register" element = {<Register />} />
+        <Route path="/patients" element = {<Patients />} />
+        <Route path="/medications" element = {<Medications />} />
+        <Route path="/prescriptions" element = {<Prescriptions />} />
+        <Route path="/notifications" element = {<Notification />} />
       </Routes>
     </BrowserRouter> 
   );

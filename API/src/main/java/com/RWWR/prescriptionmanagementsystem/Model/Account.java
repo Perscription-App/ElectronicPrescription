@@ -1,43 +1,25 @@
 package com.RWWR.prescriptionmanagementsystem.Model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.SequenceGenerator;
 
 @Entity
 public class Account {
     @Id
-    @SequenceGenerator(
-        name = "account_id_sequence", 
-        sequenceName = "account_id_sequence",
-        // this sets how much the id increases in the sequence. 
-        allocationSize = 1
-    )
-    @GeneratedValue(
-        strategy = GenerationType.SEQUENCE, 
-        generator = "account_sequence"
-    )
-    private int id;
-
     private String username;
+
     private String password;
-    private int isDoctor;
+    private String roles; // 
+    private boolean isLocked;
 
     public Account(){}
-    public Account(String username, String password, int isDoctor) {
+    public Account(String username, String password, String roles, boolean isLocked) {
         this.username = username; 
         this.password = password;
-        this.isDoctor = isDoctor;
+        this.roles = roles;
+        this.isLocked = isLocked;
     }
     //---------------getter and setters-----------------------
-    public int getAccountId() {
-        return id;
-    }
-    public void setAccountId(int id) {
-        this.id = id;
-    }
     public String getUsername() {
         return username;
     }
@@ -50,10 +32,16 @@ public class Account {
     public void setPass(String password) {
         this.password = password;
     }
-    public int getOccupation() {
-        return isDoctor;
+    public String getRoles() {
+        return roles;
     }
-    public void setOccupation(int isDoctor) {
-        this.isDoctor = isDoctor;
+    public void setRoles(String roles) {
+        this.roles = roles;
+    }
+    public boolean getLock() {
+        return isLocked;
+    }
+    public void setLock(boolean isLocked) {
+        this.isLocked = isLocked;
     }
 }

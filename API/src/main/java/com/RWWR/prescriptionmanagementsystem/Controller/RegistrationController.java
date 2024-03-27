@@ -12,12 +12,11 @@ public class RegistrationController {
     private final AccountService service;
 
     public RegistrationController(AccountService service) { this.service = service;}
-    record NewAccount (String username, String Password, Integer isDoctor) {}
 
     @PostMapping("/account")
-    public ResponseEntity<?> registerAccount(@RequestBody NewAccount request) {
+    public ResponseEntity<?> registerAccount(@RequestBody Account request) {
         try {
-            Account account = new Account(request.username(), request.Password(), request.isDoctor());
+            Account account = new Account(request.getUsername(), request.getPass(), request.getRoles(), request.getLock());
             Account addedAccount = service.newAccount(account);
             return ResponseEntity.ok(addedAccount);
         } catch (Exception e) {
@@ -26,9 +25,9 @@ public class RegistrationController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> loginAccount(@RequestBody NewAccount request) {
+    public ResponseEntity<String> loginAccount(@RequestBody Account request) {
         try {
-            Account account = new Account(request.username(), request.Password(), request.isDoctor());
+            Account account = new Account(request.getUsername(), request.getPass(), request.getRoles(), request.getLock());
             Account existingAccount = service.accountExists(account);
             if (existingAccount != null) {
                 return ResponseEntity.ok("Logged in to: " + existingAccount.getUsername());

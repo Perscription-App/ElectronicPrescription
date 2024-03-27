@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Register.css';
+import Navbar from './Navbar';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -24,11 +25,15 @@ const Register = () => {
       alert(error);
     })
   }
-
+// remove the navbar after testing
+// should only come here when the user is signed out
   return (
-    <div className="container">
-      <h1>Welcome to our App!</h1>
-      <p>Please enter a username and password.</p>
+    <div>
+      <div className="w-full flex justify-center items-center mt-16">
+        <Navbar/>
+      </div>
+      <h1 className="mt-12">Welcome to our App!</h1>
+      <p className="mt-8">Please enter a username and password.</p>
       <input
       className='input'
         type="text"
